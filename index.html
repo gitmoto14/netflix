@@ -2,55 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SRE Netflix Intro</title>
-  <link rel="stylesheet" href="./style.css?v=70">
+  <title>SRE Cyber Intro</title>
+  <link rel="stylesheet" href="./style.css?v=100">
 </head>
 <body>
 
-<div id="container">
-  <div class="sre-row">
+<div class="scanlines"></div>
 
-    <netflixintro letter="S">
-      <div class="helper-1"><div class="effect-brush"></div><div class="effect-lumieres"></div></div>
-      <div class="helper-2"><div class="effect-brush"></div></div>
-      <div class="helper-3"><div class="effect-brush"></div></div>
-      <div class="helper-4"><div class="effect-brush"></div></div>
-    </netflixintro>
-
-    <netflixintro letter="R">
-      <div class="helper-1"><div class="effect-brush"></div><div class="effect-lumieres"></div></div>
-      <div class="helper-2"><div class="effect-brush"></div></div>
-      <div class="helper-3"><div class="effect-brush"></div></div>
-      <div class="helper-4"><div class="effect-brush"></div></div>
-    </netflixintro>
-
-    <netflixintro letter="E">
-      <div class="helper-1"><div class="effect-brush"></div><div class="effect-lumieres"></div></div>
-      <div class="helper-2"><div class="effect-brush"></div></div>
-      <div class="helper-3"><div class="effect-brush"></div></div>
-      <div class="helper-4"><div class="effect-brush"></div></div>
-    </netflixintro>
-
-  </div>
+<div class="intro">
+  <span class="letter" style="--delay:0s" data-text="S">S</span>
+  <span class="letter" style="--delay:1s" data-text="R">R</span>
+  <span class="letter" style="--delay:2s" data-text="E">E</span>
 </div>
 
-<script>
-  document.querySelectorAll('.effect-brush').forEach(brush => {
-    for (let i = 31; i >= 1; i--) {
-      const span = document.createElement('span');
-      span.className = `fur-${i}`;
-      brush.appendChild(span);
-    }
-  });
-
-  document.querySelectorAll('.effect-lumieres').forEach(lights => {
-    for (let i = 1; i <= 28; i++) {
-      const span = document.createElement('span');
-      span.className = `lamp-${i}`;
-      lights.appendChild(span);
-    }
-  });
-</script>
+<div class="subtitle">SITE RELIABILITY ENGINEERING</div>
 
 </body>
 </html>
