@@ -1,122 +1,130 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.sre-row {
+  display: flex;
+  gap: 40px;
 }
 
-body {
-  height: 100vh;
+.sre-row netflixintro {
+  animation-name: zoom-in-small !important;
+  animation-duration: 4s !important;
+}
+
+.sre-row netflixintro:nth-child(1) {
+  animation-delay: 0.2s !important;
+}
+
+.sre-row netflixintro:nth-child(2) {
+  animation-delay: 1s !important;
+}
+
+.sre-row netflixintro:nth-child(3) {
+  animation-delay: 1.8s !important;
+}
+
+/* S */
+#container netflixintro[letter=S] {
+  transform-origin: center center;
+}
+
+#container netflixintro[letter=S] .helper-1 {
+  width: 17.5%;
+  height: 54%;
+  left: 39%;
+  top: -55px;
+  transform: rotate(270deg);
   overflow: hidden;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Impact, Arial Black, sans-serif;
 }
 
-.netflix-sre {
-  display: flex;
-  gap: 45px;
-  perspective: 1000px;
+#container netflixintro[letter=S] .helper-2 {
+  width: 19.5%;
+  height: 50%;
+  left: 22%;
+  top: 35px;
+  transform: rotate(180deg);
+  overflow: hidden;
 }
 
-.letter {
-  position: relative;
-  font-size: 230px;
-  font-weight: 900;
-  color: #e50914;
-  line-height: 1;
-  opacity: 0;
-  transform: scale(0.15) translateZ(-800px);
-  animation: netflixIn 1.4s ease-out forwards;
-  animation-delay: var(--delay);
-  text-shadow:
-    0 0 15px #e50914,
-    0 0 45px #e50914,
-    0 0 100px #ff0000;
+#container netflixintro[letter=S] .helper-3 {
+  width: 17.5%;
+  height: 54%;
+  left: 39%;
+  top: 85px;
+  transform: rotate(270deg);
+  overflow: hidden;
 }
 
-.letter::before {
-  content: "";
-  position: absolute;
-  inset: -200px -80px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(229, 9, 20, 0) 0px,
-    rgba(229, 9, 20, 0) 10px,
-    rgba(229, 9, 20, .8) 11px,
-    rgba(229, 9, 20, .8) 14px
-  );
-  opacity: 0;
-  filter: blur(3px);
-  z-index: -1;
-  animation: redLines 1.4s ease-out forwards;
-  animation-delay: var(--delay);
+#container netflixintro[letter=S] .helper-4 {
+  width: 19.5%;
+  height: 50%;
+  left: 58%;
+  top: 145px;
+  transform: rotate(180deg);
+  overflow: hidden;
 }
 
-.letter::after {
-  content: "";
-  position: absolute;
-  inset: -80px -40px;
-  background: radial-gradient(circle, rgba(229,9,20,.7), transparent 65%);
-  opacity: 0;
-  z-index: -2;
-  animation: glowPulse 1.4s ease-out forwards;
-  animation-delay: var(--delay);
+#container netflixintro[letter=S] .helper-1 .effect-brush,
+#container netflixintro[letter=S] .helper-2 .effect-brush,
+#container netflixintro[letter=S] .helper-3 .effect-brush,
+#container netflixintro[letter=S] .helper-4 .effect-brush {
+  animation-name: brush-moving;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
-@keyframes netflixIn {
+/* R */
+#container netflixintro[letter=R] {
+  transform-origin: 30% center;
+}
+
+#container netflixintro[letter=R] .helper-1 {
+  width: 19.5%;
+  height: 100%;
+  left: 22%;
+  top: 0;
+  transform: rotate(180deg);
+  overflow: hidden;
+}
+
+#container netflixintro[letter=R] .helper-2 {
+  width: 17.5%;
+  height: 50%;
+  left: 38%;
+  top: -49px;
+  transform: rotate(270deg);
+  overflow: hidden;
+}
+
+#container netflixintro[letter=R] .helper-3 {
+  width: 17%;
+  height: 39%;
+  left: 35%;
+  top: 29%;
+  transform: rotate(-90deg);
+  overflow: hidden;
+}
+
+#container netflixintro[letter=R] .helper-4 {
+  width: 19%;
+  height: 85%;
+  left: 50%;
+  top: 35%;
+  transform: rotate(-28deg);
+  overflow: hidden;
+}
+
+#container netflixintro[letter=R] .helper-1 .effect-brush,
+#container netflixintro[letter=R] .helper-2 .effect-brush,
+#container netflixintro[letter=R] .helper-3 .effect-brush,
+#container netflixintro[letter=R] .helper-4 .effect-brush {
+  animation-name: brush-moving;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes zoom-in-small {
   0% {
-    opacity: 0;
-    transform: scale(0.08) translateZ(-900px);
-    filter: blur(25px);
-  }
-
-  45% {
-    opacity: 1;
-    transform: scale(1.35) translateZ(80px);
-    filter: blur(0);
-  }
-
-  70% {
-    transform: scale(0.95) translateZ(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) translateZ(0);
-  }
-}
-
-@keyframes redLines {
-  0% {
-    opacity: 0;
-    transform: scaleX(0.1) translateY(180px);
-  }
-
-  35% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: scaleX(1.8) translateY(-80px);
-  }
-}
-
-@keyframes glowPulse {
-  0% {
-    opacity: 0;
-    transform: scale(0.2);
-  }
-
-  45% {
-    opacity: 1;
-    transform: scale(1.4);
-  }
-
-  100% {
-    opacity: 0.4;
     transform: scale(1);
+  }
+  100% {
+    transform: scale(4);
   }
 }
